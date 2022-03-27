@@ -1,0 +1,6 @@
+local stones = game.Players.LocalPlayer.leaderstats["Stones mined"]
+local value = stones.Value
+script.Parent.Text = value
+stones:GetPropertyChangedSignal("Value"):Connect(function()
+	script.Parent.Text = stones.Value
+end)
